@@ -205,6 +205,28 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 8
+    fields:
+    - title: Name
+      value: Narrator
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items:
   - id: 1
     fields:
@@ -619,7 +641,7 @@ MonoBehaviour:
       type: 0
       typeString: 
     - title: Initial Value
-      value: False
+      value: True
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
@@ -1426,7 +1448,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 39.428562
-        y: 92.85715
+        y: 90.190475
         width: 160
         height: 30
     - id: 2
@@ -1795,7 +1817,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 228.93826
-        y: 380.82715
+        y: 382.1605
         width: 160
         height: 30
     - id: 8
@@ -2202,8 +2224,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 231.33325
-        y: 68.33334
+        x: 229.99991
+        y: 71.000015
         width: 160
         height: 30
     - id: 16
@@ -2476,8 +2498,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 689.99976
-        y: 27.000015
+        x: 688.66644
+        y: 28.333344
         width: 160
         height: 30
     - id: 20
@@ -4620,15 +4642,16 @@ MonoBehaviour:
         destinationDialogueID: 27
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: SetQuestState("Swing Batter Batter! Wait, Where's The Ball?", "active")
+      conditionsString: CurrentQuestState("Swing Batter Batter! Wait, Where's The
+        Ball?") == "unassigned" and (Variable["ZekeUpset"] == false)
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 289.23065
-        y: 377.69226
+        x: 294.14868
+        y: 380.97095
         width: 160
         height: 30
     - id: 23
@@ -4762,18 +4785,18 @@ MonoBehaviour:
       falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
-      conditionsString: Variable["ZekeUpset"] == false and (CurrentQuestState("Swing
-        Batter Batter! Wait, Where's The Ball?") == "unassigned")
-      userScript: '
+      conditionsString: 
+      userScript: 'ShowAlert("Quest Added");
 
-        ShowAlert("Quest Added")'
+        SetQuestState("Swing Batter
+        Batter! Wait, Where''s The Ball?", "active")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 26.153854
-        y: 404.61533
+        x: 83.53088
+        y: 429.20547
         width: 160
         height: 30
     - id: 25
@@ -5410,8 +5433,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 10.38488
-        y: 527.6924
+        x: 45.262268
+        y: 519.49567
         width: 160
         height: 30
     - id: 34
@@ -5626,8 +5649,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1260.7686
-        y: 168.07684
+        x: 1265.6866
+        y: 179.55225
         width: 160
         height: 30
     - id: 37
@@ -5772,8 +5795,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6.985833, y: 0}
-    canvasZoom: 0.49000046
+    canvasScrollPosition: {x: 3.507721, y: 0}
+    canvasZoom: 0.6100004
   - id: 6
     fields:
     - title: Title
@@ -6846,8 +6869,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 220
+        x: 31.470596
+        y: 224.41177
         width: 160
         height: 30
     - id: 5
@@ -7264,12 +7287,6 @@ MonoBehaviour:
         originDialogueID: 11
         destinationConversationID: 8
         destinationDialogueID: 12
-        isConnector: 0
-        priority: 2
-      - originConversationID: 8
-        originDialogueID: 11
-        destinationConversationID: 8
-        destinationDialogueID: 39
         isConnector: 0
         priority: 2
       conditionsString: ' (Conversation[8].Dialog[9].SimStatus == "WasDisplayed")'
@@ -7889,7 +7906,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: But that does not mean a quick solution now will solve everything
           latter. Things have to happen slowly and with care. We fish too much now,
-          we kill of and overfish the poulation of fish here and won't have them
+          we kill of and overfish the population of fish here and won't have them
           later.
         type: 0
         typeString: 
@@ -8081,7 +8098,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 452.81897
+        x: 457.23077
         y: 605.7376
         width: 160
         height: 30
@@ -8255,7 +8272,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: But what about when you make a mistake with a friend about how you
-          act, and do not even attempt to listen? Or when your day foes one way,
+          act, and do not even attempt to listen? Or when your day goes one way,
           but it ends up going in a way you were not anticipating? Things happen
           chipper, and we can't always just fall back on what we know.
         type: 0
@@ -8303,8 +8320,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 612.36505
-        y: 724.0436
+        x: 610.8945
+        y: 722.573
         width: 160
         height: 30
     - id: 26
@@ -8518,7 +8535,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 793.5236
+        x: 792.05304
         y: 773.91943
         width: 160
         height: 30
@@ -9266,78 +9283,6 @@ MonoBehaviour:
         y: 887.3397
         width: 160
         height: 30
-    - id: 39
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Pictures
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 4
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: Nah chipper, you've done enough. Thanks for your help my kind-hearted
-          friend. Good to see that help ain't lost on people nowadays.
-        type: 0
-        typeString: 
-      - title: Parenthetical
-        value: 
-        type: 0
-        typeString: 
-      - title: Audio Files
-        value: '[]'
-        type: 3
-        typeString: CustomFieldType_Files
-      - title: Video File
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 8
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 8
-        originDialogueID: 39
-        destinationConversationID: 8
-        destinationDialogueID: 32
-        isConnector: 0
-        priority: 2
-      conditionsString: CurrentQuestState("Backed-Order") == "active"
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 466.72592
-        y: 365.3018
-        width: 160
-        height: 30
     - id: 40
       fields:
       - title: Title
@@ -9472,7 +9417,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 182.8507}
+    canvasScrollPosition: {x: 4.411743, y: 1.470581}
     canvasZoom: 0.6799999
   - id: 9
     fields:
@@ -9764,8 +9709,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 211.36359
-        y: 67.79007
+        x: 209.80109
+        y: 66.22757
         width: 160
         height: 30
     - id: 3
@@ -9907,7 +9852,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
+        x: 32.325577
         y: 170
         width: 160
         height: 30
@@ -10135,7 +10080,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 218.11365
-        y: 362.19138
+        y: 360.15057
         width: 160
         height: 30
     - id: 8
@@ -10206,8 +10151,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 32.79123
-        y: 420.42377
+        x: 30.465652
+        y: 425.07495
         width: 160
         height: 30
     - id: 10
@@ -10270,16 +10215,15 @@ MonoBehaviour:
         destinationDialogueID: 23
         isConnector: 0
         priority: 2
-      conditionsString: 'Coversation[9].Dialog[8].SimStatus == "WasDisplayed" and
-        (Conversation[9].Dialog[12].SimStatus == "WasDisplayed") '
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 400.51312
-        y: 455.47006
+        x: 395.68753
+        y: 448.31888
         width: 160
         height: 30
     - id: 12
@@ -10383,7 +10327,7 @@ MonoBehaviour:
         value: Of course! You think I'm gonna make my family do their jobs all the
           time and have no days or times in the year to relax?! Sweet child I may
           be a hardass and a workaholic because my parents raised me that way, but
-          I'm ain't gonna do that to my family.
+          I ain't gonna do that to my family.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -10644,8 +10588,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 596.07654
-        y: 391.8504
+        x: 652.59827
+        y: 385.32867
         width: 160
         height: 30
     - id: 17
@@ -10967,8 +10911,7 @@ MonoBehaviour:
           people cannot be changed! That idea of the people and world being in a
           state that is unchanging and that must accepted as unmoving fact is why
           we never grow as a society! You must be surprised, be willing to see the
-          changes occur, and always dig for information! It is only then that you
-          will grow mijo!
+          changes occur, and always dig! It is only then that you will grow mijo!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -11082,8 +11025,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1153.2886
-        y: 286.18265
+        x: 1243.2885
+        y: 613.68225
         width: 160
         height: 30
     - id: 23
@@ -11469,7 +11412,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Thank you so much sweet child! Remeber only take one! I don't want
+        value: Thank you so much sweet child! Remember only take one! I don't want
           to see you get in trouble or hurt. But again thank you! This literally
           may help my life and my family's!
         type: 0
@@ -11602,7 +11545,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Oooh I wish sweet child! But those dirty bastards are already taking
-          over the local fisheries and brining the regulation groups! Ayyy que maldicion
+          over the local fisheries and wringing the regulation groups! Ayyy que maldicion
           que me puso dios!
         type: 0
         typeString: 
@@ -11788,7 +11731,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 28.441544
-        y: 571.8523
+        y: 573.4148
         width: 160
         height: 30
     - id: 33
@@ -11848,7 +11791,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: CurrentQuestEntryState("Parasite's Validated", 2) == "active"
-      userScript: SetQuestState("Parasite's Validated", "success")
+      userScript: 'SetQuestState("Parasite''s Validated", "success");
+
+        SetQuestEntryState("Parasite''s
+        Validated", 2, "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11920,13 +11866,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 210.59692
-        y: 143.1343
+        x: 209.03442
+        y: 141.5718
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7600002
+    canvasZoom: 0.6400004
   - id: 10
     fields:
     - title: Title
@@ -12424,7 +12370,7 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetCinemachineBrain(false);
 
-          Camera(Wide,MayorAtkins);
+          Camera(Wide,MayorAtkins.);
 
           {{default}};'
         type: 0
@@ -12525,8 +12471,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 29
-        y: 120
+        x: 31.53164
+        y: 123.79747
         width: 160
         height: 30
     - id: 3
@@ -12573,9 +12519,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Wide,MayorAtkins);
+        value: 'Camera(Wide,MayorAtkins.);
 
-          {{default}};'
+          {{default}};
+
+'
         type: 0
         typeString: 
       conversationID: 11
@@ -12599,7 +12547,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 28
+        x: 29
         y: 170
         width: 160
         height: 30
@@ -12720,7 +12668,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Closeup,Player);
+        value: 'Camera(Wide, The Player);
 
           {{default}};'
         type: 0
@@ -12795,7 +12743,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Wide,MayorAtkins);
+        value: 'Camera(Wide,MayorAtkins.);
 
           {{default}};
 
@@ -13071,10 +13019,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Atkins: I was bambozzled that''s what! Damn huggabee''s promised
-          they''d help out our town, bring commerce and business here. I guess they
-          appealed towards my greed, or wanting to make the town better, or what
-          have you! But in the end, the town hasn''t seen a damn dime!'
+        value: 'Atkins: I was bambozzled that''s what! Damn huggabees promised they''d
+          help out our town, bring commerce and business here. I guess they appealed
+          towards my greed, or wanting to make the town better, or what have you!
+          But in the end, the town hasn''t seen a damn dime!'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -13090,7 +13038,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Wide,MayorAtkins);
+        value: 'Camera(Wide,MayorAtkins.);
 
           {{default}};'
         type: 0
@@ -13116,7 +13064,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 35
+        x: 33.734177
         y: 526
         width: 160
         height: 30
@@ -13206,7 +13154,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 7
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -13218,9 +13166,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Kojen: Listen. just ask people in town if they would participate
-          in the guy''s rally. Also make sure to help most of them too, it''ll make
-          them more likely to join us.'
+        value: 'Atkins: Ahh well, nothing much right now I''m afraid son. This is
+          something I have to do, for the sake of the town''s people! I''m not really
+          good at rallying people, but if it is for our whole benefit as a community,
+          I have to do it whether I am afraid or not.'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -13236,9 +13185,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Wide,Secretary);
+        value: 'Camera(Wide,MayorAtkins.);
 
           {{default}};'
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: 
       conversationID: 11
@@ -13281,11 +13234,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 6
+        value: 7
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 7
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -13293,10 +13246,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Atkins: Yes...Yes! That is exactly what we need. To help eachother
-          more and support eachother more to stop this menace! I''ll see if I can
-          help out with the next town over too, run some campaigns, start fundraisers,
-          do some events for those in need> And I''ll improve the town too.'
+        value: 'Kojen: Relax Atty... you''ll do finnnneeeee.'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -13312,7 +13262,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Wide,MayorAtkins);
+        value: 'Camera(Wide,Secretary);
 
           {{default}};'
         type: 0
@@ -13357,11 +13307,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 7
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 6
+        value: 7
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -13369,8 +13319,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Ahhh Atty. Always looking to help and keep your town healthy aren''t
-          ya? '
+        value: 'Atkins: Maybe, but the fact of the matter is that I am terrified
+          to go up against those Enterprise folks. Who knows what they''ll do to
+          the townsfolk if I piss them off? Probably pollute our waters even more
+          or start sending in goons to threaten us.'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -13386,7 +13338,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Wide,Secretary);
+        value: 'Camera(Wide,MayorAtkins.);
 
           {{default}};'
         type: 0
@@ -13431,11 +13383,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 6
+        value: 7
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 7
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -13443,9 +13395,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Atkins: Always my intelligent friend! I grew up here and found love
-          here, the most I can do is give back and support others so they can have
-          a great life!'
+        value: 'Kojen: We can''t let businesses roll over us though. First it will
+          be these guys, then some more guys will come in and do the same to us because
+          this first wave came in and took advantage of us. If we do nothing now,
+          the whole coast is probably just gonna be a toxic waste dump from the runoff
+          of like seven different factories.'
         type: 0
         typeString: 
       - title: Parenthetical
@@ -13461,7 +13415,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'Camera(Wide,MayorAtkins);
+        value: 'Camera(Wide,Secretary);
 
           {{default}};'
         type: 0
@@ -13510,7 +13464,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 6
+        value: 7
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -13518,7 +13472,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Alright, I'll be heading out then. Later!
+        value: So either way it seems we have to either fight back or lose our home?
         type: 0
         typeString: 
       - title: Parenthetical
@@ -13534,7 +13488,818 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SetCinemachineBrain(true);
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 16
+        destinationConversationID: 11
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 826
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Kojen: Yup. It ain''t have gotten to that point yet. But I''m telling
+          you kid, it will happen. People would rather not think about it, but that
+          is what it ultimately comes down to.'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,Secretary);
+
+          {{default}};'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 17
+        destinationConversationID: 11
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 876
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Not the biggest fan of how absolute that seems to be.
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 18
+        destinationConversationID: 11
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 926
+        width: 160
+        height: 30
+    - id: 19
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Kojen: Trust me, me neither. I wish things were more fluid and people
+          did not always have to have a conclusion that they reach for themselves,
+          but that''s just how people are. Never open truly until they are exposed
+          to something that opens their eyes. It''s either we have all people in
+          town become inherently more aware of the danger in town, or we have to
+          rally them.'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,Secretary);
+
+          {{default}};'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 19
+        destinationConversationID: 11
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 976
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Atkins: Dammit what a mess! We have to get on this now then if we
+          want to make sure everyone in town stays happy! I''ll be damned if I become
+          some run of the mill, bought off corrupt politician. No way!'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,MayorAtkins.);
+
+          {{default}};'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 21
+        destinationConversationID: 11
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 1026
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Well best of luck to you! The both of you I mean.
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 22
+        destinationConversationID: 11
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 1076
+        width: 160
+        height: 30
+    - id: 23
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Atkins: Thank you youngin''. I promise you I will do more than what
+          I can to help everyone in town!'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,MayorAtkins.);
+
+          Delay(3);'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 23
+        destinationConversationID: 11
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 1126
+        width: 160
+        height: 30
+    - id: 24
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Kojen: Atty you know I''m here to help to right? Haha!'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,Secretary);
+
+          Delay(3);'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 24
+        destinationConversationID: 11
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 1176
+        width: 160
+        height: 30
+    - id: 25
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Atkins: Sorry! I just got caught up in my thoughts and determination!'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,MayorAtkins.);
+
+          Delay(3);'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 25
+        destinationConversationID: 11
+        destinationDialogueID: 26
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 1226
+        width: 160
+        height: 30
+    - id: 26
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Kojen: I''m just joking there man! I know you, come on!'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,Secretary);
+
+          Delay(3);'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 26
+        destinationConversationID: 11
+        destinationDialogueID: 27
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 1276
+        width: 160
+        height: 30
+    - id: 27
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Atkins: Sorry again, really I am!'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,MayorAtkins.);
+
+          Delay(3);'
+        type: 0
+        typeString: 
+      conversationID: 11
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 11
+        originDialogueID: 27
+        destinationConversationID: 11
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 35
+        y: 1326
+        width: 160
+        height: 30
+    - id: 28
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 7
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Kojen: Oh brother...'
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Wide,Secretary);
+
+          Delay(3);
+
+          SetCinemachineBrain(true);'
         type: 0
         typeString: 
       conversationID: 11
@@ -13553,12 +14318,424 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 35
-        y: 826
+        y: 1376
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2, y: 183}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 1041.7719}
+    canvasZoom: 0.79000014
+  - id: 12
+    fields:
+    - title: Title
+      value: Intro
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 8
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: 
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 0
+        destinationConversationID: 12
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 30
+        y: 20
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: This town was once pure, kind, welcoming...
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'SetCinemachineBrain(false);
+
+          Camera(Magman,Wide);
+
+          Delay(5);'
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 1
+        destinationConversationID: 12
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 30
+        y: 68
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: But then it became corrupt from the factory and corporation above...
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Magman2,Full Right);
+
+          Delay(4);'
+        type: 0
+        typeString: 
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 2
+        destinationConversationID: 12
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 30
+        y: 120
+        width: 160
+        height: 30
+    - id: 3
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You must help this land.. Will you do it?
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'Camera(Magman3,Wide);
+
+          Delay(4);'
+        type: 0
+        typeString: 
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 3
+        destinationConversationID: 12
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 30
+        y: 170
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Pictures
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 8
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Yes
+        type: 0
+        typeString: 
+      - title: Parenthetical
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 3
+        typeString: CustomFieldType_Files
+      - title: Video File
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: SetCinemachineBrain(true);
+        type: 0
+        typeString: 
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 30
+        y: 220
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 7.6651335, y: 3.0544062}
+    canvasZoom: 1.06
   syncInfo:
     syncActors: 0
     syncItems: 0
